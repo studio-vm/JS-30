@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>JS + CSS Clock</title>
+</head>
+
+<body>
+  <div class="clock">
+    <div class="clock-face">
+      <div class="hand second-hand"></div>
+      <div class="hand minute-hand"></div>
+      <div class="hand hour-hand">
+        <div class="hand dot"></div>
+      </div>
+      
+    </div>
+  </div>
+  <style>
+    html {
+      background: #018DED url(https://images.unsplash.com/photo-1501769214405-5e5ee5125a02?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1898&q=80);
+      background-size: cover;
+      /* background-position-y: -200px; */
+      background-repeat: no-repeat;
+      font-family: 'helvetica neue';
+      text-align: center;
+      font-size: 10px;
+      /* width: 100vw; */
+    }
+
+    body {
+      margin: 0;
+      font-size: 2rem;
+      display: flex;
+      flex: 1;
+      min-height: 100vh;
+      align-items: center;
+    }
+
+    .clock {
+      width: 30rem;
+      height: 30rem;
+      border: 5px solid greenyellow;
+      border-radius: 50%;
+      margin: 50px auto;
+      position: relative;
+      padding: 2rem;
+      box-shadow:
+        0 0 0 4px rgba(0, 0, 0, 0.1),
+        inset 0 0 0 3px green,
+        inset 0 0 10px black,
+        0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .clock-face {
+      /* position: relative; */
+      width: 100%;
+      height: 100%;
+      transform: translateY(-3px);
+      /* transform: translateY(+3px); */
+      /* account for the height of the clock hands */
+    }
+
+    .hand {
+      width: 50%;
+      height: 6px;
+      background: black;
+      position: absolute;
+      top: 50%;
+      /* border-radius: 6px; */
+      transform-origin: 100%;
+      transform: rotate(0deg);
+      transition-timing-function: cubic-bezier(0, 2.8, 1, 1);
+    }
+
+    .second-hand {
+      background: #ff0080;
+      transform: rotate(10deg);
+      height: 2px;
+      border-radius: 1px;
+    }
+
+    .minute-hand {
+      background: #4c4c4c;
+      transform: rotate(10deg);
+      height: 4px;
+      border-radius: 2px;
+    }
+  </style>
+  <script src="app.js"></script>
+</body>
+
+</html>
